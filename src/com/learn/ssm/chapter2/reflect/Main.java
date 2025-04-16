@@ -22,5 +22,41 @@ public class Main {
         if(serviceImpl2 != null) {
             serviceImpl2.sayHello();//Hello, Alice
         }
+
+        System.out.println("-------------------------------------");
+
+        // 5.JDK动态代理
+        JdkProxyExample jdk = new JdkProxyExample();
+        HelloWorld proxy = (HelloWorld) jdk.bind(new HelloWorldImpl());
+        proxy.sayHelloWorld();//这行代码会去执行代理对象的invoke方法
+        /**
+         * 在调度真实对象之前的服务
+         * Hello World
+         * 在调度真实对象之后的服务
+         */
+
+        System.out.println("-------------------------------------");
+
+        // 6.Cglib动态代理
+        CglibProxyExample cpe = new CglibProxyExample();
+        ReflectServiceImpl obj = (ReflectServiceImpl) cpe.getProxy(ReflectServiceImpl.class);
+        obj.sayHello("Wendy");//这行代码会去执行代理对象的intercept方法
+        /**
+         * 调用真实对象前
+         * Hello, Wendy
+         * 调用真实对象后
+         */
+
+        System.out.println("-------------------------------------");
+
+        // 7.拦截器
+        HelloWorld proxy2 = (HelloWorld) InterceptorJdkProxy.bind(new HelloWorldImpl(),
+                "com.learn.ssm.chapter2.reflect.MyInterceptor");
+        proxy2.sayHelloWorld();
+        /**
+         * 反射方法前逻辑
+         * 取代了被代理对象的方法
+         * 反射方法后逻辑
+         */
     }
 }

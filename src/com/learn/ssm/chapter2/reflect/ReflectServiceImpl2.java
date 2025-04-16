@@ -8,7 +8,7 @@ public class ReflectServiceImpl2 {
     }
 
     public void sayHello() {
-        System.err.println("Hello, " + name);
+        System.out.println("Hello, " + name);
     }
 
     // 通过反射，生成对象（含参构造）

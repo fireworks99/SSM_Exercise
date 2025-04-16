@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 
 public class ReflectServiceImpl {
     public String sayHello(String name) {
-        System.err.println("Hello, " + name);
+        System.out.println("Hello, " + name);
         return name;
     }
 
