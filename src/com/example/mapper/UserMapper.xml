@@ -1,0 +1,5 @@
+<mapper namespace="com.example.mapper.UserMapper">
+    <select id="selectUserById" parameterType="int" resultType="com.example.pojo.User">
+        SELECT * FROM users WHERE id = #{id}
+    </select>
+</mapper>
