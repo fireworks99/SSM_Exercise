@@ -6,6 +6,7 @@
     <typeAliases>
         <typeAlias alias="role" type="com.learn.ssm.chapter3.pojo.Role"/>
         <typeAlias alias="user" type="com.learn.ssm.chapter4.pojo.User"/>
+        <typeAlias alias="role5" type="com.learn.ssm.chapter5.pojo.Role"/>
     </typeAliases>
 
     <!-- 对象工厂-->
@@ -28,5 +29,6 @@
     <mappers>
         <mapper resource="com/learn/ssm/chapter3/mapper/RoleMapper.xml"/>
         <mapper resource="com/learn/ssm/chapter4/mapper/UserMapper.xml"/>
+        <mapper resource="com/learn/ssm/chapter5/mapper/RoleMapper.xml"/>
     </mappers>
 </configuration>
