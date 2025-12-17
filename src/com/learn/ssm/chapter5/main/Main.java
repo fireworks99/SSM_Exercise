@@ -1,7 +1,9 @@
 package com.learn.ssm.chapter5.main;
 
+import com.learn.ssm.chapter5.mapper.UserMapper;
 import com.learn.ssm.chapter5.pojo.PageParam;
 import com.learn.ssm.chapter5.pojo.Role;
+import com.learn.ssm.chapter5.pojo.User;
 import com.learn.ssm.chapter5.utils.SqlSessionFactoryUtils;
 import com.learn.ssm.chapter5.mapper.RoleMapper;
 import org.apache.ibatis.session.SqlSession;
@@ -43,6 +45,14 @@ public class Main {
             pageParam.setPageSize(1);
             List<Role> byMix = roleMapper.findByMix(role1, pageParam);
             System.out.println(byMix);
+
+            System.out.println("------------------------------------------------------------------------------------------");
+
+            UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+            User user1 = userMapper.getUser(1L);
+            User user2 = userMapper.getUser(2L);
+            System.out.println(user1.toString());
+            System.out.println(user2.toString());
 
             //提交事务
             sqlSession.commit();
