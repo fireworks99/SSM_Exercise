@@ -1,6 +1,8 @@
 package com.learn.ssm.chapter5.main;
 
+import com.learn.ssm.chapter5.mapper.DeptMapper;
 import com.learn.ssm.chapter5.mapper.UserMapper;
+import com.learn.ssm.chapter5.pojo.Dept;
 import com.learn.ssm.chapter5.pojo.PageParam;
 import com.learn.ssm.chapter5.pojo.Role;
 import com.learn.ssm.chapter5.pojo.User;
@@ -60,6 +62,30 @@ public class Main {
             RowBounds rowBounds = new RowBounds(1, 1);
             List<User> users = userMapper.getUserRowBounds(rowBounds);
             System.out.println(users.toString());
+
+            // insert
+            DeptMapper deptMapper = sqlSession.getMapper(DeptMapper.class);
+            Dept dept = new Dept();
+            dept.setName("销售部");
+            deptMapper.insertDept(dept);
+            System.out.println(dept.toString());//Dept{id=null, name='销售部'}
+
+            Dept dept1 = new Dept();
+            dept1.setName("运维部");
+            deptMapper.insertDept2(dept1);
+            System.out.println(dept1.toString());//Dept{id=8, name='运维部'}
+
+            Dept deptBefore = new Dept();
+            deptBefore.setName("Before部");
+            deptMapper.insertDeptBefore(deptBefore);
+            System.out.println(deptBefore.toString());//Dept{id=11, name='Before部'}
+
+            Dept deptAfter = new Dept();
+            deptAfter.setName("After部");
+            deptMapper.insertDeptAfter(deptAfter);
+            System.out.println(deptAfter.toString());//Dept{id=12, name='After部'}
+
+
 
             //提交事务
             sqlSession.commit();

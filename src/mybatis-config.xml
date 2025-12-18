@@ -33,5 +33,6 @@
         <mapper resource="com/learn/ssm/chapter4/mapper/UserMapper.xml"/>
         <mapper resource="com/learn/ssm/chapter5/mapper/RoleMapper.xml"/>
         <mapper resource="com/learn/ssm/chapter5/mapper/UserMapper.xml"/>
+        <mapper resource="com/learn/ssm/chapter5/mapper/DeptMapper.xml"/>
     </mappers>
 </configuration>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.learn.ssm.chapter5.mapper.DeptMapper">
+
+    <insert id="insertDept" parameterType="dept">
+        insert into dept(name) values(#{name})
+    </insert>
+
+    <insert id="insertDept2" parameterType="dept" useGeneratedKeys="true" keyProperty="id">
+        insert into dept(name) values(#{name})
+    </insert>
+
+    <insert id="insertDeptBefore" parameterType="dept">
+        <selectKey keyProperty="id" resultType="long" order="BEFORE">
+            select if (max(id) = null, 1, max(id) + 3) from dept
+        </selectKey>
+        insert into dept(id, name) values(#{id}, #{name})
+    </insert>
+
+    <insert id="insertDeptAfter" parameterType="dept">
+        insert into dept(name) values(#{name})
+        <selectKey keyProperty="id" resultType="long" order="AFTER">
+            select last_insert_id()
+        </selectKey>
+    </insert>
+
+</mapper>
