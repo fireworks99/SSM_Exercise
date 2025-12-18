@@ -23,4 +23,8 @@
         from t_user u join dept d on u.deptId = d.id
     </select>
 
+    <select id="selectDynamicColumns" resultType="map">
+        select ${columns} from t_user
+    </select>
+
 </mapper>

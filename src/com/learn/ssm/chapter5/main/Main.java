@@ -13,6 +13,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -85,7 +86,9 @@ public class Main {
             deptMapper.insertDeptAfter(deptAfter);
             System.out.println(deptAfter.toString());//Dept{id=12, name='After部'}
 
-
+            // Dynamic column + resultType=map
+            List<Map<String, Object>> list = userMapper.selectDynamicColumns("id,username,deptId");
+            System.out.println(list);//[{deptId=1, id=1, username=admin}, {deptId=2, id=2, username=user}]
 
             //提交事务
             sqlSession.commit();
