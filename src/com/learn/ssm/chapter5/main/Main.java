@@ -6,6 +6,7 @@ import com.learn.ssm.chapter5.pojo.Role;
 import com.learn.ssm.chapter5.pojo.User;
 import com.learn.ssm.chapter5.utils.SqlSessionFactoryUtils;
 import com.learn.ssm.chapter5.mapper.RoleMapper;
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.HashMap;
@@ -48,11 +49,17 @@ public class Main {
 
             System.out.println("------------------------------------------------------------------------------------------");
 
+            // resultMap应用场景: 多表联合查询
             UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
             User user1 = userMapper.getUser(1L);
             User user2 = userMapper.getUser(2L);
             System.out.println(user1.toString());
             System.out.println(user2.toString());
+
+            // RowBounds
+            RowBounds rowBounds = new RowBounds(1, 1);
+            List<User> users = userMapper.getUserRowBounds(rowBounds);
+            System.out.println(users.toString());
 
             //提交事务
             sqlSession.commit();

@@ -18,4 +18,9 @@
         from t_user u join dept d on u.deptId = d.id where u.id = #{id}
     </select>
 
+    <select id="getUserRowBounds" resultMap="userMap">
+        select u.id, u.username, d.id as deptId, d.name as deptName
+        from t_user u join dept d on u.deptId = d.id
+    </select>
+
 </mapper>
