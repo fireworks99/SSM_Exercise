@@ -19,8 +19,8 @@ public class EmployeeTask {
         return empId;
     }
 
-    public void setEmpId(Long empid) {
-        this.empId = empid;
+    public void setEmpId(Long empId) {
+        this.empId = empId;
     }
 
     public Task getTask() {
@@ -45,5 +45,16 @@ public class EmployeeTask {
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+    @Override
+    public String toString() {
+        return "EmployeeTask{" +
+                "id=" + id +
+                ", empId=" + empId +
+                ", task=" + task +
+                ", taskName='" + taskName + '\'' +
+                ", note='" + note + '\'' +
+                '}';
     }
 }

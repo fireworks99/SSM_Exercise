@@ -34,5 +34,11 @@
         <mapper resource="com/learn/ssm/chapter5/mapper/RoleMapper.xml"/>
         <mapper resource="com/learn/ssm/chapter5/mapper/UserMapper.xml"/>
         <mapper resource="com/learn/ssm/chapter5/mapper/DeptMapper.xml"/>
+        <mapper resource="com/learn/ssm/chapter5_cascade/mapper/EmployeeMapper.xml"/>
+        <mapper resource="com/learn/ssm/chapter5_cascade/mapper/EmployeeTaskMapper.xml"/>
+        <mapper resource="com/learn/ssm/chapter5_cascade/mapper/FemaleHealthFormMapper.xml"/>
+        <mapper resource="com/learn/ssm/chapter5_cascade/mapper/MaleHealthFormMapper.xml"/>
+        <mapper resource="com/learn/ssm/chapter5_cascade/mapper/TaskMapper.xml"/>
+        <mapper resource="com/learn/ssm/chapter5_cascade/mapper/WorkCardMapper.xml"/>
     </mappers>
 </configuration>

@@ -8,8 +8,8 @@
         <result column="emp_id" property="empId"/>
         <result column="task_name" property="taskName"/>
         <result column="note" property="note"/>
-        <association property="com.learn.ssm.chapter5_cascade.pojo.Task" column="task_id"
-                     select="com.ssm.chapter5.mapper.TaskMapper.getTaskById"/>
+        <association property="task" column="task_id"
+                     select="com.learn.ssm.chapter5_cascade.mapper.TaskMapper.getTaskById"/>
     </resultMap>
 
     <select id="getEmployeeTaskByEmpId" resultMap="EmployeeTaskMap">

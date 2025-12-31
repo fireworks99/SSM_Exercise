@@ -7,5 +7,20 @@ public class MaleHealthForm extends HealthForm {
         return prostate;
     }
 
-    public void setProstate(String prostate) {}
+    public void setProstate(String prostate) { this.prostate = prostate; }
+
+    @Override
+    public String toString() {
+        return "MaleHealthForm{" +
+                "id=" + id +
+                ", empId=" + empId +
+                ", heart='" + heart + '\'' +
+                ", liver='" + liver + '\'' +
+                ", spleen='" + spleen + '\'' +
+                ", lung='" + lung + '\'' +
+                ", kidney='" + kidney + '\'' +
+                ", prostate='" + prostate + '\'' +
+                ", note='" + note + '\'' +
+                '}';
+    }
 }

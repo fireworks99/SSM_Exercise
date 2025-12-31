@@ -2,7 +2,7 @@ package com.learn.ssm.chapter5_cascade.enumeration;
 
 public enum SexEnum {
     MALE(1, "男"),
-    FEMALE(2, "女");
+    FEMALE(0, "女");
 
     private int id;
     private String name;

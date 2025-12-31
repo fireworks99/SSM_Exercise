@@ -10,4 +10,19 @@ public class FemaleHealthForm extends HealthForm{
     public void setUterus(String uterus) {
         this.uterus = uterus;
     }
+
+    @Override
+    public String toString() {
+        return "FemaleHealthForm{" +
+                "uterus='" + uterus + '\'' +
+                ", id=" + id +
+                ", empId=" + empId +
+                ", heart='" + heart + '\'' +
+                ", liver='" + liver + '\'' +
+                ", spleen='" + spleen + '\'' +
+                ", lung='" + lung + '\'' +
+                ", kidney='" + kidney + '\'' +
+                ", note='" + note + '\'' +
+                '}';
+    }
 }

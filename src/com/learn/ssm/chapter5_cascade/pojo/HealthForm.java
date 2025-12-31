@@ -1,14 +1,16 @@
 package com.learn.ssm.chapter5_cascade.pojo;
 
 public abstract class HealthForm {
-    private Long id;
-    private Long empId;
-    private String heart;
-    private String liver;
-    private String spleen;
-    private String lung;
-    private String kidney;
-    private String note;
+    protected Long id;
+
+    protected Long empId;
+    protected String heart;
+    protected String liver;
+    protected String spleen;
+    protected String lung;
+    protected String kidney;
+
+    protected String note;
 
     public Long getId() {
         return id;
@@ -72,5 +74,19 @@ public abstract class HealthForm {
 
     public void setEmpId(Long empId) {
         this.empId = empId;
+    }
+
+    @Override
+    public String toString() {
+        return "HealthForm{" +
+                "id=" + id +
+                ", empId=" + empId +
+                ", heart='" + heart + '\'' +
+                ", liver='" + liver + '\'' +
+                ", spleen='" + spleen + '\'' +
+                ", lung='" + lung + '\'' +
+                ", kidney='" + kidney + '\'' +
+                ", note='" + note + '\'' +
+                '}';
     }
 }

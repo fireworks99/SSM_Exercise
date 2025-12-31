@@ -37,4 +37,14 @@ public class Task {
     public void setNote(String note) {
         this.note = note;
     }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", context='" + context + '\'' +
+                ", note='" + note + '\'' +
+                '}';
+    }
 }
