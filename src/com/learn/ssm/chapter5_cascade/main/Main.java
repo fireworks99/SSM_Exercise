@@ -20,15 +20,24 @@ public class Main {
 
             Employee employee = employeeMapper.getEmployee(1L);// 返回 MaleEmployee 对象
             logger.info(employee instanceof MaleEmployee);//true
-            logger.info(employee.toString()) ;
+            logger.info(employee.toString());
+
+            Employee employee4 = employeeMapper.getEmployee2(1L);
+            logger.info(employee4.toString());
 
             Employee employee2 = employeeMapper.getEmployee(2L);// 返回 FemaleEmployee 对象
             logger.info(employee2 instanceof FemaleEmployee);//true
             logger.info(employee2.toString());
 
+            Employee employee5 = employeeMapper.getEmployee2(2L);
+            logger.info(employee5.toString());
+
             Employee employee3 = employeeMapper.getEmployee(3L);// 返回 MaleEmployee 对象
             logger.info(employee3 instanceof MaleEmployee);//true
             logger.info(employee3.toString());
+
+            Employee employee6 = employeeMapper.getEmployee2(3L);
+            logger.info(employee6.toString());
 
             //提交事务
             sqlSession.commit();
