@@ -1,6 +1,6 @@
 package com.learn.ssm.chapter5_cascade.main;
 
-import com.learn.ssm.chapter5.utils.SqlSessionFactoryUtils;
+import com.learn.ssm.chapter5_cascade.utils.SqlSessionFactoryUtils;
 import com.learn.ssm.chapter5_cascade.mapper.EmployeeMapper;
 import com.learn.ssm.chapter5_cascade.pojo.Employee;
 import com.learn.ssm.chapter5_cascade.pojo.FemaleEmployee;

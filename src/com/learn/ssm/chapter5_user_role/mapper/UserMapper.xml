@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.learn.ssm.chapter5_user_role.mapper.UserMapper">
+
+    <resultMap type="com.learn.ssm.chapter5_user_role.pojo.User" id="userMapper">
+        <id column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+        <collection property="roleList" column="id" fetchType="lazy"
+                    select="com.learn.ssm.chapter5_user_role.mapper.RoleMapper.findRolesByUserId"/>
+    </resultMap>
+
+    <select id="getUser" parameterType="long" resultMap="userMapper">
+        select id, username from t_user where id = #{id}
+    </select>
+
+    <select id="findUsersByRoleId" parameterType="long" resultMap="userMapper">
+        select u.id, u.username from t_user u, t_user_role ur
+        where u.id = ur.user_id and ur.role_id = #{roleId}
+    </select>
+
+</mapper>
